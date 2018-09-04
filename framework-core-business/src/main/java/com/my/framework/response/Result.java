@@ -14,7 +14,7 @@ public class Result {
     /**
      * 返回码
      */
-    private int code;
+    private String code;
 
     /**
      * 描述

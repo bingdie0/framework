@@ -1,5 +1,6 @@
 package com.my.framework.controller;
 
+import com.my.framework.request.TestResponse;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +18,9 @@ public class TestController {
      * @date: 2018/9/3
      */
     @GetMapping("/test")
-    public String test() {
-        return "hello world";
+    public TestResponse test() {
+        TestResponse testResponse = new TestResponse();
+        testResponse.setName("Bob");
+        return testResponse;
     }
 }
