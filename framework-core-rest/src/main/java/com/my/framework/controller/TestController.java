@@ -1,6 +1,8 @@
 package com.my.framework.controller;
 
 import com.my.framework.request.TestResponse;
+import com.my.framework.utils.RedisUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 public class TestController {
+
+    @Autowired
+    private RedisUtils redisUtils;
 
     /**
      * @description:
@@ -21,6 +26,8 @@ public class TestController {
     public TestResponse test() {
         TestResponse testResponse = new TestResponse();
         testResponse.setName("Bob");
+        redisUtils.set("hello", "world");
+        testResponse.setName((String) redisUtils.get("hello"));
         return testResponse;
     }
 }
