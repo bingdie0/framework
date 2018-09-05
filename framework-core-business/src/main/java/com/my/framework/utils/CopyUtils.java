@@ -19,7 +19,7 @@ public class CopyUtils {
         try {
             T target = targetClass.newInstance();
             BeanUtils.copyProperties(source, target);
-            // TODO: 2018/9/5 此处先这么写，以后改正 
+            // TODO: 2018/9/5 此处先这么写，以后改正
             return (T) source;
         } catch (InstantiationException | IllegalAccessException e) {
             throw new BusinessException("F_1002", String.format("Cannot instantiate an object of %s.", targetClass));

@@ -1,9 +1,11 @@
 package com.my.framework.config;
 
 import com.my.framework.coverter.message.FrameworkMessageConverter;
+import com.my.framework.handler.ResponseHandler;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -28,4 +30,10 @@ public class WebConfig extends WebMvcConfigurationSupport {
         converter.setSupportedMediaTypes(list);
         converters.add(converter);
     }
+
+   /* @Override
+    public void addReturnValueHandlers(List<HandlerMethodReturnValueHandler> returnValueHandlers) {
+        ResponseHandler responseHandler = new ResponseHandler();
+        returnValueHandlers.add(0, responseHandler);
+    }*/
 }

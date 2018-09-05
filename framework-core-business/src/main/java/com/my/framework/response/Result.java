@@ -2,6 +2,7 @@ package com.my.framework.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author: Mr.WangJie
@@ -24,5 +25,5 @@ public class Result {
     /**
      * 返回数据
      */
-    private Object data;
+    private Object result;
 }
