@@ -36,7 +36,7 @@ public class TestController {
     public TestResponse test() {
         TestResponse testResponse = new TestResponse();
         testResponse.setName("Bob");
-        redisUtils.set("hello", "world");
+        redisUtils.set("hello", "Bob");
         testResponse.setName(redisUtils.get("hello", String.class));
         return testResponse;
     }
