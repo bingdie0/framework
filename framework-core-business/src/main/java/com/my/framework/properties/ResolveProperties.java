@@ -16,7 +16,8 @@ import java.util.Objects;
  * @date: 2018-09-05
  **/
 @Component
-@org.springframework.context.annotation.PropertySource(name = "error.properties", value = "classpath:error.properties")
+@org.springframework.context.annotation.PropertySource(name = "error.properties", value = "classpath:error.properties",
+        ignoreResourceNotFound = true)
 public class ResolveProperties {
 
     @Autowired
