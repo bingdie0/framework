@@ -9,16 +9,12 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>framework-core-rest</artifactId>
+    <artifactId>framework-core-common</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.my.framework</groupId>
-            <artifactId>framework-core-common</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.my.framework</groupId>
-            <artifactId>framework-core-business</artifactId>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
         </dependency>
     </dependencies>
 

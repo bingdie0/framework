@@ -14,9 +14,10 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>framework-core-api</module>
+        <module>framework-core-common</module>
         <module>framework-core-business</module>
         <module>framework-core-rest</module>
+        <module>framework-boot-starters</module>
     </modules>
 
     <properties>
@@ -26,7 +27,7 @@
         <dependencies>
             <dependency>
                 <groupId>com.my.framework</groupId>
-                <artifactId>framework-core-api</artifactId>
+                <artifactId>framework-core-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
