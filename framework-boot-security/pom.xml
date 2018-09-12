@@ -9,26 +9,17 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>framework-core-rest</artifactId>
+    <artifactId>framework-boot-security</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.my.framework</groupId>
-            <artifactId>framework-core-common</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.my.framework</groupId>
-            <artifactId>framework-core-business</artifactId>
-        </dependency>
-       <!-- <dependency>
-            <groupId>com.my.framework</groupId>
-            <artifactId>framework-boot-security</artifactId>
-        </dependency>-->
-        <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
         </dependency>
     </dependencies>
-
 
 </project>
