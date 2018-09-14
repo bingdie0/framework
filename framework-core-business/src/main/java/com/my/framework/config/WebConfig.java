@@ -14,7 +14,7 @@ import java.util.List;
  * @date: 2018-09-03
  **/
 
-@Configuration
+
 public class WebConfig extends WebMvcConfigurationSupport {
 
     @Override
