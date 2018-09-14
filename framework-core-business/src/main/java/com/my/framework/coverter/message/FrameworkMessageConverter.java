@@ -1,8 +1,11 @@
 package com.my.framework.coverter.message;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.parser.Feature;
 import com.my.framework.response.ResponseUtils;
 import com.my.framework.response.Result;
+import org.apache.commons.io.IOUtils;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.HttpOutputMessage;
@@ -28,7 +31,8 @@ public class FrameworkMessageConverter<T> extends AbstractHttpMessageConverter<T
 
     @Override
     protected T readInternal(Class clazz, HttpInputMessage inputMessage) throws IOException, HttpMessageNotReadableException {
-        return null;
+        String postBodyStr = IOUtils.toString(inputMessage.getBody(), "UTF-8");
+        return (T) JSON.parseObject(postBodyStr, clazz);
     }
 
     @Override

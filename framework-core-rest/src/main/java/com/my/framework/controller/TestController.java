@@ -1,11 +1,13 @@
 package com.my.framework.controller;
 
 import com.my.framework.properties.ResolveProperties;
-import com.my.framework.request.TestResponse;
+import com.my.framework.request.TestRequest;
+import com.my.framework.response.TestResponse;
 import com.my.framework.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -24,13 +26,10 @@ public class TestController {
      * @author: Mr.WangJie
      * @date: 2018/9/3
      */
-    @GetMapping("/test")
-    public TestResponse test() {
-        TestResponse testResponse = new TestResponse();
-        testResponse.setName("Bob");
-        RedisUtils.set("hello", "CC");
-        testResponse.setName(RedisUtils.get("hello", String.class));
-        return testResponse;
+    @PostMapping("/test")
+    public String test(@RequestBody TestRequest request) {
+
+        return request.getName();
     }
 
     @GetMapping("/config")

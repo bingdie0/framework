@@ -1,4 +1,4 @@
-package com.my.framework.request;
+package com.my.framework.response;
 
 import lombok.Data;
 
