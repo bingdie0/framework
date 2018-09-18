@@ -47,6 +47,11 @@
                 <artifactId>framework-datasource</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.my.framework</groupId>
+                <artifactId>redis-framework-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
