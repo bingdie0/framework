@@ -1,6 +1,6 @@
 package com.my.framework.utils;
 
-import com.my.framework.context.ApplicationContextHelper;
+import com.my.framework.common.context.ApplicationContextHelper;
 import com.my.framework.exception.BusinessException;
 import org.springframework.data.redis.core.RedisTemplate;
 

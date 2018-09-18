@@ -14,11 +14,12 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>framework-core-common</module>
+        <module>framework-common</module>
         <module>framework-core-business</module>
         <module>framework-core-rest</module>
         <module>framework-boot-starters</module>
         <module>framework-boot-security</module>
+        <module>framework-datasource</module>
     </modules>
 
     <properties>
@@ -33,7 +34,7 @@
             </dependency>
             <dependency>
                 <groupId>com.my.framework</groupId>
-                <artifactId>framework-core-common</artifactId>
+                <artifactId>framework-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>

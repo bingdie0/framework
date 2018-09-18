@@ -33,7 +33,7 @@
         </dependency>
         <dependency>
             <groupId>com.my.framework</groupId>
-            <artifactId>framework-core-common</artifactId>
+            <artifactId>framework-common</artifactId>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
