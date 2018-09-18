@@ -25,9 +25,9 @@ import java.util.List;
  **/
 @Repository
 @Data
-public class BaseSqlServiceImpl<T extends BaseEntity> implements BaseSqlService<T> {
+public abstract class BaseSqlServiceImpl<T extends BaseEntity> implements BaseSqlService<T> {
 
-    private BaseMapper<T> baseMapper;
+    private BaseMapper baseMapper;
 
     private Class<T> entityClass;
 
