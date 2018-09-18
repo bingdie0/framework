@@ -26,4 +26,8 @@ public class ResponseUtils {
     public static Result getErrorResult() {
         return new Result(ERROR_CODE, ERROR_MSG, null);
     }
+
+    public static Result getErrorResult(Object obj) {
+        return new Result(ERROR_CODE, ERROR_MSG, obj);
+    }
 }

@@ -10,7 +10,7 @@ import java.util.List;
  * @author: Mr.WangJie
  * @date: 2018-09-17
  **/
-public interface BaseSqlService {
+public interface BaseSqlService<T> {
 
     /**
      * 根据条件查询排序
@@ -19,8 +19,8 @@ public interface BaseSqlService {
      * @param orders  排序列表
      * @return
      */
-    <T> List<T> selectList(List<SearchFilter> filters, List<Order> orders);
+    List<T> selectList(List<SearchFilter> filters, List<Order> orders);
 
 
-    <T> Page<T> queryByPage(Page<T> page);
+    Page<T> queryByPage(Page<T> page);
 }

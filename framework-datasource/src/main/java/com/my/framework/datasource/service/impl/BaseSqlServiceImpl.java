@@ -8,7 +8,8 @@ import com.my.framework.datasource.entity.Order;
 import com.my.framework.datasource.entity.SearchFilter;
 import com.my.framework.datasource.mapper.BaseMapper;
 import com.my.framework.datasource.service.BaseSqlService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.Data;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
@@ -22,34 +23,33 @@ import java.util.List;
  * @author: Mr.WangJie
  * @date: 2018-09-17
  **/
-@Service
-public class BaseSqlServiceImpl<E extends BaseEntity> implements BaseSqlService {
+@Repository
+@Data
+public class BaseSqlServiceImpl<T extends BaseEntity> implements BaseSqlService<T> {
 
-    @Autowired
-    private BaseMapper baseMapper;
+    private BaseMapper<T> baseMapper;
 
-    private Class<E> entityClass;
+    private Class<T> entityClass;
 
-    private BaseSqlServiceImpl() {
+    public BaseSqlServiceImpl() {
         Type genType = getClass().getGenericSuperclass();
 
         if (genType instanceof ParameterizedType) {
             Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
-            this.entityClass = (Class<E>) params[0];
+            this.entityClass = (Class<T>) params[0];
 
         }
     }
 
 
     @Override
-    public <T> List<T> selectList(List<SearchFilter> filters, List<Order> orders) {
+    public List<T> selectList(List<SearchFilter> filters, List<Order> orders) {
         Example example = getExample(filters, orders);
-        List<T> list = baseMapper.selectByExample(example);
-        return list;
+        return baseMapper.selectByExample(example);
     }
 
     @Override
-    public <T> Page<T> queryByPage(Page<T> page) {
+    public Page<T> queryByPage(Page<T> page) {
         PageHelper.startPage(page.getPageNum(), page.getPageSize());
         System.out.println(page.getClass());
         return page;

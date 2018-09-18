@@ -41,7 +41,13 @@ public class FrameworkMessageConverter<T> extends AbstractHttpMessageConverter<T
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setAcceptCharset(Collections.singletonList(StandardCharsets.UTF_8));
 
-        Result result = ResponseUtils.getSuccessResult(o);
+        Result result;
+        if (o instanceof Exception) {
+            result = ResponseUtils.getErrorResult(o);
+        } else {
+            result = ResponseUtils.getSuccessResult(o);
+        }
+
         String json = JSON.toJSONString(result);
         OutputStream out = outputMessage.getBody();
         out.write(json.getBytes());

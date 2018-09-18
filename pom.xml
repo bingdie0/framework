@@ -9,13 +9,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>framework-core</artifactId>
+    <artifactId>framework</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
 
     <modules>
         <module>framework-common</module>
-        <module>framework-core-business</module>
+        <module>framework-core</module>
         <module>framework-core-rest</module>
         <module>framework-boot-starters</module>
         <module>framework-boot-security</module>
@@ -39,7 +39,12 @@
             </dependency>
             <dependency>
                 <groupId>com.my.framework</groupId>
-                <artifactId>framework-core-business</artifactId>
+                <artifactId>framework-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.my.framework</groupId>
+                <artifactId>framework-datasource</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>
