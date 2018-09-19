@@ -1,7 +1,7 @@
 package com.my.framework.web.response;
 
 import com.alibaba.fastjson.JSON;
-import com.my.framework.exception.BusinessException;
+import com.my.framework.common.exception.BusinessException;
 
 /**
  * @author: Mr.WangJie

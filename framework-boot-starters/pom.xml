@@ -14,6 +14,7 @@
 
     <modules>
         <module>redis-framework-boot-starter</module>
+        <module>web-framework-boot-starter</module>
     </modules>
 
 

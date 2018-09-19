@@ -28,6 +28,11 @@
         <dependencies>
             <dependency>
                 <groupId>com.my.framework</groupId>
+                <artifactId>framework-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.my.framework</groupId>
                 <artifactId>framework-boot-security</artifactId>
                 <version>${project.version}</version>
             </dependency>
