@@ -13,14 +13,12 @@ import org.springframework.beans.BeansException;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.ArrayList;
@@ -102,9 +100,9 @@ public class WebAutoConfig implements WebMvcConfigurer, ApplicationContextAware 
     /**
      * 设置convertWriter
      *
-     * @param messageConverter
-     * @param writerBeanName
-     * @param writerClassName
+     * @param messageConverter 消息转换器
+     * @param writerBeanName 写对象name
+     * @param writerClassName 写对象类型
      */
     private void setConvertWriter(FrameworkMessageConverter messageConverter, String writerBeanName,
                                   Class<MessageConvertWriter> writerClassName) {
@@ -133,9 +131,9 @@ public class WebAutoConfig implements WebMvcConfigurer, ApplicationContextAware 
     /**
      * 设置convertReader
      *
-     * @param messageConverter
-     * @param readBeanName
-     * @param readClassName
+     * @param messageConverter 消息转换器
+     * @param readBeanName 读对象name
+     * @param readClassName 读对象类型
      */
     private void setConvertReader(FrameworkMessageConverter messageConverter, String readBeanName,
                                   Class<MessageConvertReader> readClassName) {
