@@ -2,6 +2,7 @@ package com.my.framework.common.utils;
 
 import com.my.framework.common.exception.BusinessException;
 import lombok.extern.slf4j.Slf4j;
+
 import org.apache.commons.collections4.CollectionUtils;
 import org.springframework.beans.BeanUtils;
 

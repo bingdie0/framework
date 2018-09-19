@@ -7,7 +7,7 @@ import com.my.framework.web.coverters.FrameworkMessageConverter;
 import com.my.framework.web.coverters.MessageConvertReader;
 import com.my.framework.web.coverters.MessageConvertWriter;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeansException;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -68,7 +68,9 @@ public class WebAutoConfig implements WebMvcConfigurer, ApplicationContextAware 
         if (CollectionUtils.isEmpty(skipReturnResultPathList)) {
             skipReturnResultPathList = new ArrayList<>();
         }
-        skipReturnResultPathList.addAll(messageConverterProperties.getDefaultSkipReturnResultPathList());
+        if (CollectionUtils.isNotEmpty(messageConverterProperties.getDefaultSkipReturnResultPathList())) {
+            skipReturnResultPathList.addAll(messageConverterProperties.getDefaultSkipReturnResultPathList());
+        }
         messageConverter.setSkipReturnResultPathList(skipReturnResultPathList);
         // 默认会添加spring自带的几个converters
         return new HttpMessageConverters(messageConverter);

@@ -1,8 +1,8 @@
-package com.my.framework.common.handler;
+package com.my.framework.web.handler;
 
 import com.alibaba.fastjson.JSON;
-import response.ResponseUtils;
-import response.Result;
+import com.my.framework.web.response.ResponseUtils;
+import com.my.framework.web.response.Result;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.ResponseBody;
