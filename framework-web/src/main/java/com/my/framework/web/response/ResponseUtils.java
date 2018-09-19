@@ -1,4 +1,4 @@
-package com.my.framework.response;
+package com.my.framework.web.response;
 
 import com.alibaba.fastjson.JSON;
 import com.my.framework.exception.BusinessException;

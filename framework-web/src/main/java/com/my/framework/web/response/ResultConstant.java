@@ -1,4 +1,4 @@
-package com.my.framework.response;
+package com.my.framework.web.response;
 
 /**
  * @author: Mr.WangJie

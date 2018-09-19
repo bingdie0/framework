@@ -1,8 +1,7 @@
-package com.my.framework.response;
+package com.my.framework.web.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * @author: Mr.WangJie

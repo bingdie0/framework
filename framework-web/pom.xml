@@ -9,30 +9,25 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>framework-core-rest</artifactId>
+    <artifactId>framework-web</artifactId>
+
 
     <dependencies>
-        <dependency>
-            <groupId>com.my.framework</groupId>
-            <artifactId>framework-common</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.my.framework</groupId>
-            <artifactId>framework-core</artifactId>
-        </dependency>
-       <!-- <dependency>
-            <groupId>com.my.framework</groupId>
-            <artifactId>framework-boot-security</artifactId>
-        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.my.framework</groupId>
-            <artifactId>framework-datasource</artifactId>
+            <artifactId>framework-common</artifactId>
         </dependency>
     </dependencies>
-
-
 </project>
